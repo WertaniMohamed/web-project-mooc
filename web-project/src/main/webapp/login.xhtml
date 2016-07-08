@@ -1,0 +1,52 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:p="http://primefaces.org/ui">
+
+<ui:composition template="/templetes/login.xhtml">
+	<ui:define name="pageTitle">Login</ui:define>
+	<ui:define name="body">
+		<div class="container-fluid">
+
+			<div class="lock-container">
+				<div class="panel panel-default text-center paper-shadow"
+					data-z="0.5">
+					<h1 class="text-display-1 text-center margin-bottom-none">Sign
+						In</h1>
+					<h:graphicImage library="images" name="people/110/guy-5.jpg"
+						class="img-circle width-80" />
+					<div class="panel-body">
+						<h:form id="loginForm">
+							<div class="form-group">
+								<div class="form-control-material">
+									<h:inputText value="#{mainBeans.login}" id="username"
+										styleClass="form-control" />
+									<label for="username">Username</label>
+								</div>
+							</div>
+							<div class="form-group">
+								<div class="form-control-material">
+									<h:inputText value="#{mainBeans.password}" id="password"
+										styleClass="form-control" placeholder="Enter Password" />
+									<label for="password">Password</label>
+								</div>
+							</div>
+							<h:commandButton action="#{mainBeans.validUser()}" value="Login"
+								styleClass="btn btn-primary" />
+
+							<a href="#" class="forgot-password">Forgot password?</a>
+							<a href="#" class="link-text-color">Create account</a>
+
+						</h:form>
+						<h:messages showDetail="true" style="color:red" />
+
+					</div>
+				</div>
+			</div>
+		</div>
+
+	</ui:define>
+</ui:composition>
+</html>
